@@ -1,0 +1,106 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Badges</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+
+    
+    <mat-card class="b-1 shadow-none">
+      <mat-card-content>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <button mat-raised-button color="accent">Accent</button>
+        <!-- my-component.component.html -->
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email">
+
+  <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>
+
+<!-- my-component.component.html -->
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name">
+  <div *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
+    Name is required
+  </div>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email">
+  <div *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+    Email is required
+  </div>
+  <div *ngIf="myForm.get('email').hasError('email') && myForm.get('email').touched">
+    Please enter a valid email address
+  </div>
+
+  <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form> -->
+
+
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="b-1 shadow-none">
+      <mat-card-content>
+        <p>
+          <span matBadge="4" matBadgeOverlap="false" class="f-w-500 text-muted">Text with a badge2</span>
+        </p>
+        <div *ngIf="data2">
+          <h1>Data from API</h1>
+          <ul>
+            <li *ngFor="let item of data2">
+              {{ item.name }}<!-- Replace with actual property names -->
+            </li>
+          </ul>
+        </div>     
+        <div *ngIf="!data2">
+          <p>Loading data...</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="b-1 shadow-none">
+      <mat-card-content>
+        <p>
+          <span matBadge="4" matBadgeOverlap="false" matBadgeSize="large" class="f-w-500 text-muted">Text with large
+            badge</span>
+        </p>
+        <p>{{ count }}</p>
+        <button (click)="incrementCount()">increase count</button>
+        <button (click)="decreaseCount()">decrease count</button>
+
+        <div *ngIf="data">
+          <h1>Data from API</h1>
+          <ul>
+            <li *ngFor="let item of data">
+              {{ item.title }}<!-- Replace with actual property names -->
+            </li>
+          </ul>
+        </div>     
+        <div *ngIf="!data">
+          <p>Loading data...</p>
+        </div>
+        
+      </mat-card-content>
+    </mat-card>
+
+  </mat-card-content>
+</mat-card>
